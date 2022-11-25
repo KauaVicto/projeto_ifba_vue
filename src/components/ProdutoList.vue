@@ -12,24 +12,15 @@
       <h2 class="display-4" id="title_produto">
         <a :href="'/calcado/' + id">{{ nome }}</a>
       </h2>
-      <p>
-        {{ preco }}
-      </p>
-      <p>
-        Gênero: {{ genero }}
-      </p>
-      <p>
-        Marca: {{ marca }}
-      </p>
-      <p>
-        Tipo: {{ tipo }}
-      </p>
+      <p>{{ preco }}</p>
+      <p>Gênero: {{ genero }}</p>
+      <p>Marca: {{ marca }}</p>
+      <p>Tipo: {{ tipo }}</p>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "ProdutoList",
   props: ["id", "nome", "img_src", "preco", "genero", "marca", "tipo"],

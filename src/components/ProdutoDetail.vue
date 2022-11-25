@@ -1,10 +1,18 @@
 <template>
   <div class="row">
     <div class="col-md-6">
-      <img :src="img_calcado" alt="" id="img-calcado" />
+      <img :src="'/img/calcados/' + img_src" alt="" id="img-calcado" />
     </div>
     <div class="col-md-6">
-      <h1>teste</h1>
+      <h2 class="display-4" id="title_produto">
+        <a :href="'/calcado/' + id">{{ nome }}</a>
+      </h2>
+      <p>
+        {{ preco }}
+      </p>
+      <p>Gênero: {{ genero }}</p>
+      <p>Marca: {{ marca }}</p>
+      <p>Tipo: {{ tipo }}</p>
     </div>
   </div>
 </template>

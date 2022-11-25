@@ -6,7 +6,7 @@
             "tipo": "Tênis",
             "marca": "Adidas",
             "genero": "Masculino",
-            "preco": 99.9,
+            "preco": null,
             "img": "calcado_teste.png"
         },
         {

@@ -20,7 +20,7 @@
 
 <script>
 import ProdutoList from "../components/ProdutoList.vue";
-import Vue from 'vue'
+import Vue from "vue";
 
 /* importando o axios */
 import axios from "axios";
@@ -40,17 +40,19 @@ export default {
   },
   methods: {
     async getProdutos() {
-
-      await axios.get("http://localhost:8080/produtos/").then((response) => {
+      await axios.get("http://localhost:8080/cors-library/managed/produtos").then((response) => {
         this.produtos = Array.from(response.data);
       });
     },
     formatarNumero(numero) {
-      let valorFormatado = numero.toLocaleString("pt-br", {
-        style: "currency",
-        currency: "BRL",
-      });
-      return valorFormatado;
+      if (typeof numero === 'number') {
+        return numero.toLocaleString("pt-br", {
+          style: "currency",
+          currency: "BRL",
+        });
+      }else{
+        return '';
+      }
     },
   },
 };

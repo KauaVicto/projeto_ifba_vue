@@ -13,7 +13,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "cadastrar" */ '../views/CadastrarView.vue')
   },
   {
-    path: '/calcado',
+    path: '/calcado/:id',
     name: 'calcado',
     component: () => import(/* webpackChunkName: "calcado" */ '../views/CalcadoView.vue')
   }

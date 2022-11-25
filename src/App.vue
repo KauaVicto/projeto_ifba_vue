@@ -14,6 +14,15 @@ export default {
     Navbar,
     Footer,
   },
+  methods: {
+    formatarNumero(numero) {
+      let valorFormatado = numero.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      });
+      return valorFormatado;
+    },
+  }
 };
 </script>
 

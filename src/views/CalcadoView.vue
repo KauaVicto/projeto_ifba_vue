@@ -1,24 +1,31 @@
 <template>
   <div class="calcado main-container container">
-    <div class="row">
-      <div class="col-md-6">
-        <img :src="img_calcado" alt="" id="img-calcado">
-      </div>
-      <div class="col-md-6">
-        <h1>teste</h1>
-      </div>
-    </div>
+    <ProdutoDetail />
   </div>
 </template>
 
 <script>
+import ProdutoDetail from '@/components/ProdutoDetail.vue';
 
 export default {
   name: 'CalcadoView',
+  components: {
+    ProdutoDetail
+  },
   data() {
     return {
-      img_calcado: '/img/calcados/calcado_teste.png'
+      produto: null
     }
+  },
+  mounted() {
+    this.getProduto()
+  },
+  methods: {
+    async getProduto() {
+      await axios.get("http://localhost:3000/produtos/" + this.$route.params.id).then((response) => {
+        this.produtos = Array.from(response.data);
+      });
+    },
   }
 }
 </script>

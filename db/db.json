@@ -1,3 +1,22 @@
 {
-    
+    "produtos": [
+        {
+            "id": 1,
+            "nome": "Sapato azul",
+            "tipo": "Tênis",
+            "marca": "Adidas",
+            "genero": "Masculino",
+            "preco": 99.9,
+            "img": "calcado_teste.png"
+        },
+        {
+            "id": 2,
+            "nome": "Sapato azul",
+            "tipo": "Tênis",
+            "marca": "Adidas",
+            "genero": "Masculino",
+            "preco": 99.9,
+            "img": "calcado_teste2.png"
+        }
+    ]
 }

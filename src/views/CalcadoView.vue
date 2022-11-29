@@ -73,4 +73,8 @@ export default {
   border: 2px solid #655a5a;
   border-radius: 20px;
 }
+
+.calcado {
+  min-height: calc(100vh - 338px);
+}
 </style>

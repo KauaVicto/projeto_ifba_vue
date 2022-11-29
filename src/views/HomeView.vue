@@ -60,7 +60,7 @@ export default {
 
 <style scoped>
 .home {
-  min-height: 400px;
+  min-height: calc(100vh - 338px);
 }
 
 .item {

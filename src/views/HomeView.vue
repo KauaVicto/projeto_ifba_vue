@@ -5,7 +5,7 @@
         <!-- Produtos -->
 
         <ProdutoList
-          :img_src="produto.img"
+          :img_src="produto.img_byte"
           :nome="produto.nome"
           :id="produto.id"
           :preco="formatarNumero(produto.preco)"

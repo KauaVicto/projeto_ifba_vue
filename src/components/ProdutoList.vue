@@ -3,7 +3,7 @@
     <div class="col-md-3">
       <a :href="'/calcado/' + id">
         <img
-          :src="'/img/calcados/' + img_src"
+          :src="('data:image/jpeg;base64,'+img_src)"
           alt="Imagem do calçado"
           class="img_calcado"
       /></a>

@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-md-6">
-      <img :src="'/img/calcados/' + img_src" alt="" id="img-calcado" />
+      <img :src="('data:image/jpeg;base64,'+img_src)" alt="" id="img-calcado" />
     </div>
     <div class="col-md-6">
       <h2 class="display-4" id="title_produto">
@@ -28,8 +28,8 @@ export default {
 .produto {
   margin: 0;
 }
-.img_calcado {
-  width: 100%;
+#img-calcado {
+  width: 300px;
   border-radius: 10px;
   border: 2px solid black;
 }

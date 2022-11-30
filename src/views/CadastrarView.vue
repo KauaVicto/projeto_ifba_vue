@@ -76,7 +76,7 @@
               v-on:change="updatePhoto($event.target.files)"
             />
           </div>
-          <button type="submit" class="btn btn-primary my-3">Submit</button>
+          <button type="submit" class="btn btn-primary my-3">Salvar</button>
         </div>
       </form>
     </div>
@@ -126,17 +126,11 @@ export default {
         headers: {
           "Content-Type": "multipart/form-data",
         },
+      }).then(() => {
+        window.location.href = '/';
       });
 
-      // const fd = new FormData();
-      // /* fd.append("img", this.img.data, this.img.nome); */
-      // fd.append("nome", this.nome);
-      // fd.append("tipo", this.tipo);
-      // fd.append("genero", this.genero);
-      // fd.append("marca", this.marca);
-      // fd.append("preco", this.preco);
-
-      //axios.post("http://localhost:8080/cors-library/managed/produtos", data);
+      
     },
     /* onChangeFileUpload() {
       this.img = ref(["file"]).value;

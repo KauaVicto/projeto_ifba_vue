@@ -50,7 +50,7 @@ export default {
           this.marca = response.data.marca;
           this.tipo = response.data.tipo;
           this.genero = response.data.genero;
-          this.img = response.data.img;
+          this.img = response.data.img_byte;
           this.preco = response.data.preco;
         });
     },

@@ -1,7 +1,7 @@
 <template>
   <div class="cadastro container">
     <div class="w-50 mx-auto">
-      <form @submit="cadastrarProduto">
+      <form @submit="cadastrarProduto" id="form_produto" enctype="multipart/form-data">
         <div class="row">
           <div class="form-group my-3 col-md-12">
             <label for="produto_nome">Nome:</label>
@@ -71,9 +71,9 @@
             <label for="produto_img">Insira uma imagem do produto</label>
             <input
               type="file"
-              accept="image/*"
-              class="form-control-file"
-              @change="updatePhoto($event.target.files)"
+              id="file"
+              ref="file"
+              v-on:change="updatePhoto($event.target.files)"
             />
           </div>
           <button type="submit" class="btn btn-primary my-3">Submit</button>
@@ -84,6 +84,11 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
+/* importando o axios */
+import axios from "axios";
+
 export default {
   name: "CadastrarView",
   data() {
@@ -93,10 +98,7 @@ export default {
       genero: null,
       marca: null,
       preco: null,
-      img: {
-        nome: null,
-        data: null
-      },
+      img: null,
     };
   },
   methods: {
@@ -109,19 +111,42 @@ export default {
         genero: this.genero,
         marca: this.marca,
         preco: this.preco,
-        img: this.img.nome
+        img: this.img,
       };
 
-      console.log(data)
+      const fd = new FormData();
+      fd.append('file', this.img);
+      fd.append('nome', this.nome);
+      fd.append('tipo', this.tipo);
+      fd.append('genero', this.genero);
+      fd.append('marca', this.marca);
+      fd.append('preco', this.preco);
+
+      axios.post("http://localhost:8080/cors-library/managed/produtos/", fd, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      // const fd = new FormData();
+      // /* fd.append("img", this.img.data, this.img.nome); */
+      // fd.append("nome", this.nome);
+      // fd.append("tipo", this.tipo);
+      // fd.append("genero", this.genero);
+      // fd.append("marca", this.marca);
+      // fd.append("preco", this.preco);
+
+      //axios.post("http://localhost:8080/cors-library/managed/produtos", data);
     },
+    /* onChangeFileUpload() {
+      this.img = ref(["file"]).value;
+      console.log(this.img)
+    }, */
     updatePhoto(files) {
       if (!files.length) return;
 
       // salva os dados da imagem
-      this.img = {
-        nome: files[0].name,
-        data: files[0],
-      };
+      this.img = files[0];
     },
   },
 };

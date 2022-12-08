@@ -28,6 +28,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inika&family=Roboto+Slab:wght@900&display=swap');
+
 * {
   margin: 0;
   font-family: Helvetica;

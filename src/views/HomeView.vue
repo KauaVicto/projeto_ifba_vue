@@ -1,12 +1,12 @@
 <template>
   <div class="home container">
     <div class="row">
-      <div v-for="produto in produtos" :key="produto.id" class="col-md-6 item">
+      <div v-for="produto in produtos" :key="produto.id" class="col-md-4 item">
         <!-- Produtos -->
 
         <ProdutoList
           :img_src="produto.img_byte"
-          :nome="produto.nome"
+          :nome="produto.name"
           :id="produto.id"
           :preco="formatarNumero(produto.preco)"
           :genero="produto.genero"

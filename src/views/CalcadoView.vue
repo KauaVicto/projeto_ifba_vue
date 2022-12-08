@@ -2,7 +2,7 @@
   <div class="calcado main-container container">
     <ProdutoDetail
       :img_src="img"
-      :nome="nome"
+      :nome="name"
       :id="id"
       :preco="formatarNumero(preco)"
       :genero="genero"
@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       id: null,
-      nome: null,
+      name: null,
       marca: null,
       tipo: null,
       genero: null,
@@ -46,7 +46,7 @@ export default {
         )
         .then((response) => {
           this.id = response.data.id;
-          this.nome = response.data.nome;
+          this.name = response.data.name;
           this.marca = response.data.marca;
           this.tipo = response.data.tipo;
           this.genero = response.data.genero;
